@@ -8,8 +8,8 @@
         <?php
         // central point for connecting the classes
         // dependency injection
-        require 'FakeDatabase.php';
-        $database = new FakeDatabase();
+        require 'MySQLDatabase.php';
+        $database = new MySQLDatabase();
 
         require 'Model.php';
         $model = new Model($database);
