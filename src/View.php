@@ -1,6 +1,6 @@
 <?php
 
-interface IView {
+interface View {
 
     public function getTasks();
 }

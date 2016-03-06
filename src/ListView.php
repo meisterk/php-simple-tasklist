@@ -1,22 +1,21 @@
 <?php
 
-require 'IView.php';
-require 'Model.php';
+require 'View.php';
 
-class ListView implements IView {
+class ListView implements View {
 
     private $model;
 
-    public function __construct() {
-        $this->model = new Model();
+    public function __construct(Model $model) {
+        $this->model = $model;
     }
-    
+
     /**
      * 
      * returns HTML-List auf Tasks
      * 
      * @return string
-     */    
+     */
     public function getTasks() {
         $htmlList = '<ul>';
         $taskList = $this->model->getTaskList();

@@ -1,11 +1,11 @@
 <?php
-require 'Database.php';
 
 class Model {
+
     private $database;
-    
-    public function __construct() {
-        $this->database = new Database();
+
+    public function __construct(Database $database) {
+        $this->database = $database;
     }
 
     /**
@@ -14,8 +14,9 @@ class Model {
      * 
      * @return array of Tasks
      */
-    public function getTaskList(){
+    public function getTaskList() {
         $taskList = $this->database->getTaskList();
         return $taskList;
     }
+
 }
