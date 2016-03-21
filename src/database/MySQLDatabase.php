@@ -1,7 +1,7 @@
 <?php
 
 require 'Database.php';
-require 'Task.php';
+require ( __DIR__.'/../model/Task.php');
 
 class MySQLDatabase implements Database {
 
@@ -47,7 +47,7 @@ class MySQLDatabase implements Database {
         // return array of Task-instances
         return $tasklist;
     }
-   
+
     public function updateTask(Task $task) {
         $sql = "UPDATE task SET timestamp=:timestamp, text=:text WHERE id=:id";
         $stmt = $this->db->prepare($sql);

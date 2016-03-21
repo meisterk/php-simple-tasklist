@@ -8,13 +8,13 @@
         <?php
         // central point for connecting the classes
         // dependency injection
-        require 'MySQLDatabase.php';
+        require 'database/MySQLDatabase.php';
         $database = new MySQLDatabase();
 
-        require 'Model.php';
+        require 'model/Model.php';
         $model = new Model($database);
 
-        require 'ListView.php';
+        require 'view/ListView.php';
         $view = new ListView($model);
 
         // print Task as List
