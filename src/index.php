@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Simple PHP Tasklist</title>
+        <title>Simple PHP Tasklist</title> 
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     </head>
     <body>
         <h1>Simple PHP Tasklist</h1>
@@ -17,12 +18,12 @@
 
         require 'controller/HTTPGETRequest.php';
         $request = new HTTPGETRequest();
-        
+
         require 'view/TableView.php';
         $view = new TableView($model);
 
         require 'controller/Controller.php';
-        $controller = new Controller($model, $request, $view);        
+        $controller = new Controller($model, $request, $view);
         ?>
     </body>        
 </html>
