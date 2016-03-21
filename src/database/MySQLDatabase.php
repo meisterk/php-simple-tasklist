@@ -1,7 +1,7 @@
 <?php
 
 require 'Database.php';
-require ( __DIR__.'/../model/Task.php');
+require ( __DIR__ . '/../model/Task.php');
 
 class MySQLDatabase implements Database {
 
@@ -63,13 +63,11 @@ class MySQLDatabase implements Database {
         $stmt->execute();
     }
 
-    public function deleteTask(Task $task) {
+    public function deleteTask($id) {
         $sql = "DELETE FROM task WHERE id=:id";
         $stmt = $this->db->prepare($sql);
 
         $stmt->bindParam(':id', $id);
-
-        $id = $task->getId();
 
         $stmt->execute();
     }

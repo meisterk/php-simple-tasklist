@@ -13,5 +13,5 @@ interface Database {
     public function updateTask(Task $task);
 
     // DELETE
-    public function deleteTask(Task $task);
+    public function deleteTask($id);
 }

@@ -13,7 +13,7 @@
 
         require 'model/Model.php';
         $model = new Model($database);
-
+        
         require 'view/ListView.php';
         $view = new ListView($model);
 
