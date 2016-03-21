@@ -2,5 +2,5 @@
 
 interface View {
 
-    public function getTasks();
+    public function sendHTTPResponse();
 }

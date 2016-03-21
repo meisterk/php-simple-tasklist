@@ -9,7 +9,7 @@ class Model {
     }
 
     public function createTask($text) {
-        // This is the only point weere we can see business-logic:
+        // This is the only point where we can see business-logic:
         // A new Task gets an actual timestamp.
         // The id is ignored by the MySQL-Database,
         // because it's auto_increment.

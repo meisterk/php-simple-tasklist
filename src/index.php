@@ -8,18 +8,21 @@
         <?php
         // central point for connecting the classes
         // dependency injection
+
         require 'database/MySQLDatabase.php';
         $database = new MySQLDatabase();
 
         require 'model/Model.php';
         $model = new Model($database);
-        
-        require 'view/ListView.php';
-        $view = new ListView($model);
 
-        // print Task as List
-        $taskList = $view->getTasks();
-        echo $taskList;
+        require 'controller/HTTPGETRequest.php';
+        $request = new HTTPGETRequest();
+        
+        require 'view/TableView.php';
+        $view = new TableView($model);
+
+        require 'controller/Controller.php';
+        $controller = new Controller($model, $request, $view);        
         ?>
     </body>        
 </html>

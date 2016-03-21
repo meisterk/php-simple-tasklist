@@ -4,19 +4,13 @@ require 'View.php';
 
 class ListView implements View {
 
-    private $model;
+    private $model;    
 
     public function __construct(Model $model) {
         $this->model = $model;
     }
 
-    /**
-     * 
-     * returns HTML-List auf Tasks
-     * 
-     * @return string
-     */
-    public function getTasks() {
+    private function getTasksAsHTMLList() {
         $htmlList = '<ul>';
         $taskList = $this->model->getTaskList();
         foreach ($taskList as $task) {
@@ -24,6 +18,10 @@ class ListView implements View {
         }
         $htmlList = $htmlList . '</ul>';
         return $htmlList;
+    }
+
+    public function sendHTTPResponse() {        
+        echo $this->getTasksAsHTMLList();
     }
 
 }
