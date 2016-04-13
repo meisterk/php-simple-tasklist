@@ -4,19 +4,12 @@ require 'View.php';
 
 class TableView implements View {
 
-    private $model;
-
-    public function __construct(Model $model) {
-        $this->model = $model;
+    public function sendHTTPResponse(array $taskList) {
+        echo $this->getTasksAsHTMLTable($taskList) . $this->getNewForm();
     }
 
-    public function sendHTTPResponse() {
-        echo $this->getTasksAsHTMLTable() . $this->getNewForm();
-    }
-
-    private function getTasksAsHTMLTable() {
+    private function getTasksAsHTMLTable(array $taskList) {
         $htmlList = '<table class="pure-table pure-table-bordered">';
-        $taskList = $this->model->getTaskList();
         foreach ($taskList as $task) {
             $htmlList = $htmlList .
                     '<tr>' .

@@ -20,7 +20,10 @@
         $request = new HTTPGETRequest();
 
         require 'view/TableView.php';
-        $view = new TableView($model);
+        $view = new TableView();
+
+//        require 'view/ListView.php';
+//        $view = new ListView();
 
         require 'controller/Controller.php';
         $controller = new Controller($model, $request, $view);

@@ -2,5 +2,5 @@
 
 interface View {
 
-    public function sendHTTPResponse();
+    public function sendHTTPResponse(array $taskList);
 }

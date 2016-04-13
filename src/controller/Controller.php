@@ -27,6 +27,7 @@ class Controller {
         }
         
         // Display content
-        $view->sendHTTPResponse();
+        $taskList = $this->model->getTaskList();
+        $view->sendHTTPResponse($taskList);
     }
 }
